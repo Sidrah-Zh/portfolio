@@ -9,65 +9,40 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300">
+    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300 shadow-lg z-10">
       <div className="m-4">
         <span className="sm:text-2xl font-bold text-[#ccd6f6] m-4 font-serif italic">
           Sidrah Zahoor
         </span>
       </div>
 
-      <ul className="hidden md:flex">
-        <li className="group">
-          <Link
-            to="home"
-            smooth={true}
-            duration={500}
-            className="relative inline-block"
-          >
+      <ul className="hidden md:flex space-x-8">
+        <li className="group relative">
+          <Link to="home" smooth={true} duration={500} className="text-lg cursor-pointer">
             Home
             <span className="absolute block h-1 w-full bg-pink-600 left-0 -bottom-1 scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
           </Link>
         </li>
-        <li className="group">
-          <Link
-            to="about"
-            smooth={true}
-            duration={500}
-            className="relative inline-block"
-          >
+        <li className="group relative">
+          <Link to="about" smooth={true} duration={500} className="text-lg cursor-pointer">
             About
             <span className="absolute block h-1 w-full bg-pink-600 left-0 -bottom-1 scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
           </Link>
         </li>
-        <li className="group">
-          <Link
-            to="skills"
-            smooth={true}
-            duration={500}
-            className="relative inline-block"
-          >
+        <li className="group relative">
+          <Link to="skills" smooth={true} duration={500} className="text-lg cursor-pointer">
             Skills
             <span className="absolute block h-1 w-full bg-pink-600 left-0 -bottom-1 scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
           </Link>
         </li>
-        <li className="group">
-          <Link
-            to="work"
-            smooth={true}
-            duration={500}
-            className="relative inline-block"
-          >
+        <li className="group relative">
+          <Link to="work" smooth={true} duration={500} className="text-lg cursor-pointer">
             Work
             <span className="absolute block h-1 w-full bg-pink-600 left-0 -bottom-1 scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
           </Link>
         </li>
-        <li className="group">
-          <Link
-            to="contact"
-            smooth={true}
-            duration={500}
-            className="relative inline-block"
-          >
+        <li className="group relative">
+          <Link to="contact" smooth={true} duration={500} className="text-lg cursor-pointer">
             Contact
             <span className="absolute block h-1 w-full bg-pink-600 left-0 -bottom-1 scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
           </Link>
@@ -75,7 +50,7 @@ const Navbar = () => {
       </ul>
 
       <div onClick={handleClick} className="md:hidden z-10">
-        {!nav ? <FaBars /> : <FaTimes />}
+        {!nav ? <FaBars size={30} /> : <FaTimes size={30} />}
       </div>
 
       <ul
@@ -112,9 +87,9 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <div className="hidden lg:flex fixed flex-col top-[35%] left-0">
+      <div className="hidden lg:flex fixed flex-col top-[35%] left-0 space-y-4">
         <ul>
-          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600">
+          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600 rounded-md shadow-lg">
             <a
               className="flex justify-between items-center w-full text-gray-300"
               href="https://www.linkedin.com/in/sidzh/"
@@ -122,7 +97,7 @@ const Navbar = () => {
               Linkedin <FaLinkedin size={30} />
             </a>
           </li>
-          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]">
+          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333] rounded-md shadow-lg">
             <a
               className="flex justify-between items-center w-full text-gray-300"
               href="https://github.com/"
@@ -130,7 +105,7 @@ const Navbar = () => {
               Github <FaGithub size={30} />
             </a>
           </li>
-          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#6fc2b0]">
+          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#6fc2b0] rounded-md shadow-lg">
             <a
               className="flex justify-between items-center w-full text-gray-300"
               href="mailto:sidzahoor33@gmail.com"
@@ -138,7 +113,7 @@ const Navbar = () => {
               Email <HiOutlineMail size={30} />
             </a>
           </li>
-          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f69]">
+          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f69] rounded-md shadow-lg">
             <a
               className="flex justify-between items-center w-full text-gray-300"
               href="https://drive.google.com/file/d/1cwNtjhTCG9uvgEuhR_k-UN6oFtEj2mDH/view?usp=drive_link"
