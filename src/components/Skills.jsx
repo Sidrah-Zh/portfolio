@@ -1,86 +1,92 @@
 import React from "react";
+import { motion } from "framer-motion";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaGithub,
+  FaGitlab,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiTypescript,
+  SiAntdesign,
+  SiClickup,
+} from "react-icons/si";
 
-import HTML from "../assets/html.png";
-import CSS from "../assets/css.png";
-import JavaScript from "../assets/javascript.png";
-import ReactImg from "../assets/react.png";
-import Gitlab from "../assets/Gitlab.png";
-import Typescript from "../assets/TypeScript.png";
-import AntD from "../assets/Antd.jpg";
-import GitHub from "../assets/github.png";
-import Tailwind from "../assets/tailwind.png";
-import Clickup from "../assets/Clickup.png";
-import Nodejs from "../assets/Node.js_logo.svg.png";
+const skillsData = [
+  { icon: <FaHtml5 size={50} className="text-orange-500" />, name: "HTML" },
+  { icon: <FaCss3Alt size={50} className="text-blue-500" />, name: "CSS" },
+  { icon: <FaJs size={50} className="text-yellow-500" />, name: "JavaScript" },
+  { icon: <FaReact size={50} className="text-blue-400" />, name: "React" },
+  { icon: <FaNodeJs size={50} className="text-green-500" />, name: "Node.js" },
+  {
+    icon: <SiTailwindcss size={50} className="text-teal-400" />,
+    name: "Tailwind",
+  },
+  {
+    icon: <SiAntdesign size={50} className="text-red-500" />,
+    name: "Ant Design",
+  },
+  {
+    icon: <SiTypescript size={50} className="text-blue-600" />,
+    name: "TypeScript",
+  },
+  { icon: <FaGithub size={50} className="text-gray-300" />, name: "GitHub" },
+  { icon: <FaGitlab size={50} className="text-orange-600" />, name: "GitLab" },
+  { icon: <SiClickup size={50} className="text-pink-500" />, name: "ClickUp" },
+];
 
 const Skills = () => {
   return (
-    <div
-      name="skills"
-      className="w-full min-h-screen bg-[#0a192f] text-gray-300 pt-32 sm:pt-24"
+    <section
+      id="skills"
+      className="w-full min-h-screen bg-[#0a192f] text-gray-300 flex justify-center items-center px-6 py-16"
     >
-      <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full">
-        <div>
-          <p className="text-4xl font-bold inline border-b-4 border-pink-600">
+      <motion.div
+        className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        >
+          <p className="text-4xl font-bold inline border-b-4 border-pink-500 text-center">
             Skills
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center py-8">
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src={HTML} alt="HTML icon" />
-            <p className="my-4">HTML</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src={CSS} alt="CSS icon" />
-            <p className="my-4">CSS</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img
-              className="w-20 mx-auto"
-              src={JavaScript}
-              alt="JavaScript icon"
-            />
-            <p className="my-4">JavaScript</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src={ReactImg} alt="React icon" />
-            <p className="my-4">React</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src={Nodejs} alt="Node.js icon" />
-            <p className="my-4">Node.js</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src={Tailwind} alt="Tailwind icon" />
-            <p className="my-4">Tailwind</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src={AntD} alt="Ant Design icon" />
-            <p className="my-4">Ant Design</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img
-              className="w-20 mx-auto"
-              src={Typescript}
-              alt="TypeScript icon"
-            />
-            <p className="my-4">TypeScript</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src={GitHub} alt="GitHub icon" />
-            <p className="my-4">GitHub</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src={Gitlab} alt="GitLab icon" />
-            <p className="my-4">GitLab</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src={Clickup} alt="ClickUp icon" />
-            <p className="my-4">ClickUp</p>
-          </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 text-center py-8">
+          {skillsData.map((skill, index) => (
+            <motion.div
+              key={index}
+              className="shadow-md shadow-[#0d1b2a] bg-[#1b263b] p-6 rounded-lg relative overflow-hidden group flex flex-col items-center justify-center"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.1, rotate: 3 }}
+            >
+              <motion.div className="transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12">
+                {skill.icon}
+              </motion.div>
+              <motion.p
+                className="mt-4 text-lg font-semibold text-gray-200 group-hover:text-pink-500 transition-colors duration-300"
+                whileHover={{ scale: 1.1 }}
+              >
+                {skill.name}
+              </motion.p>
+            </motion.div>
+          ))}
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </section>
   );
 };
 
